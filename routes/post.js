@@ -9,8 +9,8 @@ const router = express.Router();
 router.get("/profile", async (req, res) => {
   //get post delete patch requests
   try {
-    const post = await Post.find();
-    res.json({ response: 1, message: "success", data: [{ post }] });
+    const data = await Post.find();
+    res.json({ response: 1, message: "success", data });
   } catch (err) {
     res.json({ message: err });
   }
